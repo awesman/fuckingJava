@@ -1,6 +1,6 @@
 package observer;
 
-public interface SurfaceObserver {
+public interface Observer {
 
     void processSurface(SurfaceEvent event);
 }

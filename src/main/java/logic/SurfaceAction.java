@@ -37,7 +37,6 @@ public class SurfaceAction {
     }
 
     public static double cosWithOxy(Surface one) {
-        Angle angle = Angle.getInstance();
         double x1 = one.getPointOne().getX();
         double x2 = one.getPointTwo().getX();
         double x3 = one.getPointThree().getX();
@@ -54,7 +53,6 @@ public class SurfaceAction {
         b = z1 * (x2 - x3) + z2 * (x3 - x1) + z3 * (x3 - x2);
         c = x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y3 - y2);
         double surfaceAngle = c / ((Math.sqrt(1)) * (Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2))));
-        angle.addAngle(one.getId(), surfaceAngle);
         return surfaceAngle;
     }
 

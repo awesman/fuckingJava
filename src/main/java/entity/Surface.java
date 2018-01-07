@@ -3,9 +3,6 @@ package entity;
 import logic.SurfaceAction;
 import observer.Angle;
 import observer.SurfaceEvent;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Surface {
@@ -16,7 +13,6 @@ public class Surface {
     private Point pointThree;
     private Angle angle;
     private double cos;
-    private List<Angle> observerList = new ArrayList<>();
 
 
     public Surface(int id, Point pointOne, Point pointTwo, Point pointThree) {

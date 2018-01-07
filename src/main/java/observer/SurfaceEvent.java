@@ -2,15 +2,16 @@ package observer;
 
 import entity.Surface;
 
-public class SurfaceEvent {
+import java.util.EventObject;
 
-    Surface one;
+public class SurfaceEvent extends EventObject {
 
-    public SurfaceEvent(Surface one){
-        this.one=one;
+    public SurfaceEvent(Surface source){
+        super(source);
     }
 
-    public Surface getOne(){
-        return one;
+    @Override
+    public Surface getSource(){
+        return (Surface)super.getSource();
     }
 }

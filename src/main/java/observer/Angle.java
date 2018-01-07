@@ -1,18 +1,21 @@
 package observer;
 
+import entity.Point;
 import entity.Surface;
-import logic.SurfaceAction;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class Angle implements SurfaceObserver {
+import static logic.SurfaceAction.cosWithOxy;
+
+public class Angle implements Observer {
 
     public static Angle instance = null;
     private static List<Surface> angles = new ArrayList<>();
 
 
-    public void addObservable(Surface surface){
+    public void addObservable(Surface surface) {
         angles.add(surface);
     }
 
@@ -23,21 +26,24 @@ public class Angle implements SurfaceObserver {
         return instance;
     }
 
-   /* public double getAngle(int id) {
-        return angles.get(id);
-    }
-
-    public void addAngle(int id, double square) {
-        angles.add(id, square);
-    }*/
-
     @Override
     public void processSurface(SurfaceEvent event) {
-        double angle = event.getOne().getCos();
 
-        Surface one = event.getOne();
-        int id = one.getId();
-        double newAngle = SurfaceAction.cosWithOxy(one);
-        angles.set(id, newAngle);
+        double newCos = cosWithOxy(event.getSource());
+        Point one = event.getSource().getPointOne();
+        Point newPoint;
+        Iterator<Surface> iterator = angles.iterator();
+        boolean change = false;
+        while (iterator.hasNext()) {
+            Surface sur = iterator.next();
+            newPoint = sur.getPointOne();
+            if (one.equals(newPoint)) {
+                change = true;
+            }
+        }
+        if (change) {
+            event.getSource().setCos(newCos);
+            LeaderInfo.currentCos = newCos;
+        }
     }
 }
