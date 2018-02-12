@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name ="SteampoweredTest">
+    <test name="MainScenario">
+        <classes>
+            <class name="tests.SteampoweredTest">
+            </class>
+        </classes>
+    </test>
+</suite>

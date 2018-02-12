@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="OnlinerTest">
+    <test name="MainScenario">
+        <parameter name="SEARCH_CATEGORY" value="Дома, коттеджи"/>
+        <classes>
+            <class name="OnlinerTest"></class>
+        </classes>
+    </test>
+</suite>

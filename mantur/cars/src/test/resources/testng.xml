@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name ="CarTest">
+    <test name="Scenario">
+        <classes>
+            <class name="testRunner.RunTest">
+            </class>
+        </classes>
+    </test>
+</suite>
